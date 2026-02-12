@@ -1,0 +1,16 @@
+<p>hero-detail works!</p>
+<div *ngIf="hero">
+    <h2>{{hero.name | uppercase }} Details</h2>
+    <div><span>id: </span>{{hero.id}}</div>
+    <div *ngIf="hero.strength; else elsediv;"><span>strength: </span>{{hero.strength}}</div>
+    <ng-template #elsediv>
+    <div ><span>strength: </span>unknown</div>
+    </ng-template>
+
+    <div>
+        <label for ="name">Hero Name:</label>
+        <input id="name" [(ngModel)]="hero.name" placeholder="name">
+        <label for ="strength">Hero Strength:</label>
+        <input id="strength" [(ngModel)]="hero.strength" placeholder="number">
+    </div>
+</div> 
